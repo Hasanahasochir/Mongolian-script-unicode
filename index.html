@@ -120,7 +120,7 @@ background: rgba(100,250,100,0.4);
 <center>
 <h1>Mongolian script unicode summary</h1>
 <p>Click the character to type into textbox below, click its unicode below for detailed stats.<br>Any text you click inside the table are copied to your clipboard.<br>
-    Base font is Mongolian Universal White. <span class="ex">U+181A ~ U+181E use Monospace font as MUW is not supported.</span><br>
+    Default font is Mongolian Universal White. <span class="ex">U+181A ~ U+181E use Monospace font as MUW is not supported.</span><br>
     more info: <a href="https://www.unicode.org/charts/PDF/U1800.pdf" target="_blank">https://www.unicode.org/charts/PDF/U1800.pdf</a><br>
     by Victor Lee
 </p>
@@ -539,7 +539,7 @@ background: rgba(100,250,100,0.4);
 <textarea id="output" rows="4" placeholder="ᠭᠠᠷᠤᠯᠲᠠ"></textarea>
 <p>
 <button onclick="insertAtCaret('output', ' ');return false;" style="color:blue">space</button> <button onclick="document.getElementById('output').value = ''" style="color:red">clear</button><br>
-<button onclick="monospace()">Monospace</button> default<br>
+<button onclick="monospace()">Monospace</button>textarea default<br>
 <button onclick="muw()">Mongolian Universal White</button> mo. & ma.<br>
 <button onclick="nsm()">Noto Sans Mongolian</button> mo.<br>
 <button onclick="oss()">Onon Sonin Sans</button> mo.<br>
