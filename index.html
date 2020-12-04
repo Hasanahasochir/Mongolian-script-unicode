@@ -564,6 +564,25 @@ MARKER">᠇</td>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
+$(".mongolian>td").click(function(){
+    var range = document.createRange();
+    range.selectNodeContents(this);  
+    var sel = window.getSelection(); 
+    sel.removeAllRanges(); 
+    sel.addRange(range);
+    document.execCommand('copy');
+    insertAtCaret('output', sel);return false;
+});
+$(".unicode>td").click(function(){
+    var range = document.createRange();
+    range.selectNodeContents(this);  
+    var sel = window.getSelection(); 
+    sel.removeAllRanges(); 
+    sel.addRange(range);
+    document.execCommand('copy');
+    window.open("https://www.compart.com/en/unicode/" + sel, "_blank");
+});
+// ---------------------------
 function insertAtCaret(areaId, text) {
   var txtarea = document.getElementById(areaId);
   if (!txtarea) {
@@ -587,25 +606,6 @@ function insertAtCaret(areaId, text) {
   strPos = strPos + text.length;
   txtarea.scrollTop = scrollPos;
 }
-// ---------------------------
-$(".mongolian>td").click(function(){
-    var range = document.createRange();
-    range.selectNodeContents(this);  
-    var sel = window.getSelection(); 
-    sel.removeAllRanges(); 
-    sel.addRange(range);
-    document.execCommand('copy');
-    insertAtCaret('output', sel);return false;
-});
-$(".unicode>td").click(function(){
-    var range = document.createRange();
-    range.selectNodeContents(this);  
-    var sel = window.getSelection(); 
-    sel.removeAllRanges(); 
-    sel.addRange(range);
-    document.execCommand('copy');
-    window.open("https://www.compart.com/en/unicode/" + sel, "_blank");
-});
 // ---------------------------
 function monospace() {
   document.getElementById("output").style.fontFamily = "monospace";
