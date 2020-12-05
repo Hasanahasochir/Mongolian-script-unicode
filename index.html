@@ -552,12 +552,13 @@ MARKER">᠇</td>
 <p>
 fonts:<br>
 <button onclick="monospace()">Monospace</button> textarea default<br>
-<button onclick="muw()">Mongolian Universal White</button> mn. & mnc.<br>
+<button onclick="muw()">Mongolian Universal White</button> mn. & sjo+mnc.<br>
 <button onclick="nsm()">Noto Sans Mongolian</button> mn.<br>
 <button onclick="oss()">Onon Sonin Sans</button> mn.<br>
 <button onclick="mgt()">Menk Garqag Tig</button> mn.<br>
-<button onclick="zb()">XM_ZhengBai</button> mnc.<br>
-<button onclick="bh()">XM_BiaoHei</button> mnc.<br>
+<button onclick="zb()">XM_ZhengBai</button> sjo+mnc.<br>
+<button onclick="bh()">XM_BiaoHei</button> sjo+mnc.<br>
+<button onclick="yb()">XM_YingBi</button> sjo+mnc.<br>
 <button onclick="ms()">Menksoft2012</button> mn.</p>
 <hr>
 <p style="border: 1px solid">U+1800 ~ U+180A: punctuation</p>
@@ -637,6 +638,9 @@ function zb() {
 }
 function bh() {
   document.getElementById("output").style.fontFamily = 'XM_BH';
+}
+function yb() {
+  document.getElementById("output").style.fontFamily = 'XM_YB';
 }
 function ms() {
   document.getElementById("output").style.fontFamily = 'Menksoft2012';
