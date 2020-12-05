@@ -86,7 +86,7 @@ table td, table th {
 }
 table .mongolian > td:hover {
     color: #F00;
-    background: rgba(150,150,150,0.3);
+    background: rgba(180,180,180,0.3);
 }
 table .unicode > td:hover {
     color: #00F;
@@ -107,6 +107,9 @@ background: rgba(200,0,200,0.1);
 }
 .manchu {
 background: rgba(200,200,0,0.3);
+}
+.mnc {
+color: #750;
 }
 .buryat {
 background: rgba(100,250,100,0.4);
@@ -157,8 +160,8 @@ background: rgba(100,250,100,0.4);
 <td  tag="MONGOLIAN TODO SOFT HYPHEN • not a format control character, but simply a hyphen for Todo • also used in the Hudum (modern Mongolian) writing system">᠆</td>
 <td tag="MONGOLIAN SIBE SYLLABLE BOUNDARY
 MARKER">᠇</td>
-<td tag="MONGOLIAN MANCHU COMMA">᠈</td>
-<td tag="MONGOLIAN MANCHU FULL STOP">᠉</td>
+<td tag="MONGOLIAN MANCHU COMMA" class="mnc">᠈</td>
+<td tag="MONGOLIAN MANCHU FULL STOP" class="mnc">᠉</td>
 <td tag="MONGOLIAN NIRUGU">᠊</td>
 <td tag="MONGOLIAN FREE VARIATION SELECTOR ONE • abbreviated FVS1" class="fc">᠋</td>
 <td tag="MONGOLIAN FREE VARIATION SELECTOR TWO • abbreviated FVS2" class="fc">᠌</td>
@@ -220,22 +223,22 @@ MARKER">᠇</td>
 <td>U+181F</td>
 </tr>
 <tr class="mongolian">
-<td tag="Mongolian Letter A а /a/">ᠠ</td>
+<td tag="Mongolian Letter A а /a/ mnc: a /a/" class="mnc">ᠠ</td>
 <td tag="Mongolian Letter E э /e/">ᠡ</td>
 <td tag="Mongolian Letter I и /i/">ᠢ</td>
-<td tag="Mongolian Letter O о /ɔ/">ᠣ</td>
+<td tag="Mongolian Letter O о /ɔ/ mnc: o /ɔ/" class="mnc">ᠣ</td>
 <td tag="Mongolian Letter U у /ʊ/">ᠤ</td>
 <td tag="Mongolian Letter OE ө /o/">ᠥ</td>
 <td tag="Mongolian Letter UE ү /u/">ᠦ</td>
 <td tag="Mongolian Letter EE е /e, je/">ᠧ</td>
-<td tag="Mongolian Letter NA н /n/">ᠨ</td>
-<td tag="Mongolian Letter ANG -н /ŋ/">ᠩ</td>
-<td tag="Mongolian Letter BA б /p/">ᠪ</td>
+<td tag="Mongolian Letter NA н /n/ mnc: n /n/" class="mnc">ᠨ</td>
+<td tag="Mongolian Letter ANG -н /ŋ/ mnc: ng /ŋ/" class="mnc">ᠩ</td>
+<td tag="Mongolian Letter BA б /p/ mnc: b /p/" class="mnc">ᠪ</td>
 <td tag="Mongolian Letter PA п /pʰ/">ᠫ</td>
 <td tag="Mongolian Letter QA х /χ~x/">ᠬ</td>
 <td tag="Mongolian Letter GA г /q~k/">ᠭ</td>
-<td tag="Mongolian Letter MA м /m/">ᠮ</td>
-<td tag="Mongolian Letter LA л /ɮ/">ᠯ</td>
+<td tag="Mongolian Letter MA м /m/ mnc: m /m/" class="mnc">ᠮ</td>
+<td tag="Mongolian Letter LA л /ɮ/ mnc: l /l/" class="mnc">ᠯ</td>
 </tr>
 <tr class="unicode">
 <td>U+1820</td>
@@ -256,22 +259,22 @@ MARKER">᠇</td>
 <td>U+182F</td>
 </tr>
 <tr class="mongolian">
-<td tag="Mongolian Letter SA с /s/">ᠰ</td>
+<td tag="Mongolian Letter SA с /s/ mnc: s /s/" class="mnc">ᠰ</td>
 <td tag="Mongolian Letter SHA ш /ɕ/">ᠱ</td>
 <td tag="Mongolian Letter TA т /tʰ/">ᠲ</td>
 <td tag="Mongolian Letter DA д /t/">ᠳ</td>
-<td tag="Mongolian Letter CHA ч, ц /ʨʰ, ʦʰ/">ᠴ</td>
-<td tag="Mongolian Letter JA ж, з /ʨ, ʦ/">ᠵ</td>
-<td tag="Mongolian Letter YA й /j/">ᠶ</td>
+<td tag="Mongolian Letter CHA ч, ц /ʨʰ, ʦʰ/ mnc: c /ʨʰ/" class="mnc">ᠴ</td>
+<td tag="Mongolian Letter JA ж, з /ʨ, ʦ/ mnc: j /ʨ/" class="mnc">ᠵ</td>
+<td tag="Mongolian Letter YA й /j/ mnc: y /j/" class="mnc">ᠶ</td>
 <td tag="Mongolian Letter RA р /r/">ᠷ</td>
-<td tag="Mongolian Letter WA в /β, w/ loan.">ᠸ</td>
+<td tag="Mongolian Letter WA в /β, w/ loan. mnc: w /w/" class="mnc">ᠸ</td>
 <td tag="Mongolian Letter FA ф /f/ loan.">ᠹ</td>
-<td tag="Mongolian Letter KA х /kʰ/ loan.">ᠺ</td>
+<td tag="Mongolian Letter KA х /kʰ/ loan. mnc: k' /kʰ/" class="mnc">ᠺ</td>
 <td tag="Mongolian Letter KHA к ཁ /kʰ/ loan.">ᠻ</td>
 <td tag="Mongolian Letter TSA ц ཚ /ʦʰ/ loan.">ᠼ</td>
 <td tag="Mongolian Letter ZA з ཛ /ʦ/ loan.">ᠽ</td>
 <td tag="Mongolian Letter HA х ཧ /h/ loan.">ᠾ</td>
-<td tag="Mongolian Letter ZRA ж ཞ /ɻ~ʐ, ʑ/ loan.">ᠿ</td>
+<td tag="Mongolian Letter ZRA ж r ཞ /ɻ~ʐ, ʑ/ loan.">ᠿ</td>
 </tr>
 <tr class="unicode">
 <td>U+1830</td>
@@ -341,9 +344,9 @@ MARKER">᠇</td>
 <td tag="Mongolian Letter Todo JIA" class="todo">ᡚ</td>
 <td tag="Mongolian Letter Todo NIA" class="todo">ᡛ</td>
 <td tag="Mongolian Letter Todo DZA" class="todo">ᡜ</td>
-<td tag="Mongolian Letter Sibe E mnc: e /ɤ/" class="sibe">ᡝ</td>
-<td tag="Mongolian Letter Sibe I mnc: i /i/" class="sibe">ᡞ</td>
-<td tag="Mongolian Letter Sibe IY mnc: y, i' /ɯ/" class="sibe">ᡟ</td>
+<td tag="Mongolian Letter Sibe E mnc: e /ɤ/" class="sibe mnc">ᡝ</td>
+<td tag="Mongolian Letter Sibe I //" class="sibe">ᡞ</td>
+<td tag="Mongolian Letter Sibe IY mnc: y, i' /ɯ/" class="sibe mnc">ᡟ</td>
 </tr>
 <tr class="unicode">
 <td>U+1850</td>
@@ -364,22 +367,22 @@ MARKER">᠇</td>
 <td>U+185F</td>
 </tr>
 <tr class="mongolian">
-<td tag="Mongolian Letter Sibe UE mnc: u /u/" class="sibe">ᡠ</td>
-<td tag="Mongolian Letter Sibe U mnc: ū /ʊ/" class="sibe">ᡡ</td>
+<td tag="Mongolian Letter Sibe UE mnc: u /u/" class="sibe mnc">ᡠ</td>
+<td tag="Mongolian Letter Sibe U mnc: ū /ʊ/" class="sibe mnc">ᡡ</td>
 <td tag="Mongolian Letter Sibe ANG //" class="sibe">ᡢ</td>
 <td tag="Mongolian Letter Sibe KA //" class="sibe">ᡣ</td>
-<td tag="Mongolian Letter Sibe GA mnc: g /q~k/" class="sibe">ᡤ</td>
-<td tag="Mongolian Letter Sibe HA mnc: h /χ~x/" class="sibe">ᡥ</td>
-<td tag="Mongolian Letter Sibe PA mnc: p /pʰ/" class="sibe">ᡦ</td>
-<td tag="Mongolian Letter Sibe SHA mnc: š /ɕ/" class="sibe">ᡧ</td>
-<td tag="Mongolian Letter Sibe TA mnc: t /tʰ/" class="sibe">ᡨ</td>
-<td tag="Mongolian Letter Sibe DA mnc: d /t/" class="sibe">ᡩ</td>
+<td tag="Mongolian Letter Sibe GA mnc: g /q~k/" class="sibe mnc">ᡤ</td>
+<td tag="Mongolian Letter Sibe HA mnc: h /χ~x/" class="sibe mnc">ᡥ</td>
+<td tag="Mongolian Letter Sibe PA mnc: p /pʰ/" class="sibe mnc">ᡦ</td>
+<td tag="Mongolian Letter Sibe SHA mnc: š /ɕ/" class="sibe mnc">ᡧ</td>
+<td tag="Mongolian Letter Sibe TA mnc: t /tʰ/" class="sibe mnc">ᡨ</td>
+<td tag="Mongolian Letter Sibe DA mnc: d /t/" class="sibe mnc">ᡩ</td>
 <td tag="Mongolian Letter Sibe JA //" class="sibe">ᡪ</td>
 <td tag="Mongolian Letter Sibe FA //" class="sibe">ᡫ</td>
 <td tag="Mongolian Letter Sibe GAA mnc: g' /k/" class="sibe">ᡬ</td>
 <td tag="Mongolian Letter Sibe HAA mnc: h' /x/" class="sibe">ᡭ</td>
-<td tag="Mongolian Letter Sibe TSA mnc: ts' /tsʰ/" class="sibe">ᡮ</td>
-<td tag="Mongolian Letter Sibe ZA mnc: dz /ts/" class="sibe">ᡯ</td>
+<td tag="Mongolian Letter Sibe TSA mnc: ts' /tsʰ/" class="sibe mnc">ᡮ</td>
+<td tag="Mongolian Letter Sibe ZA mnc: dz /ts/" class="sibe mnc">ᡯ</td>
 </tr>
 <tr class="unicode">
 <td>U+1860</td>
@@ -400,14 +403,14 @@ MARKER">᠇</td>
 <td>U+186F</td>
 </tr>
 <tr class="mongolian">
-<td tag="Mongolian Letter Sibe RAA mnc: ž /ɻ~ʐ/" class="sibe">ᡰ</td>
-<td tag="Mongolian Letter Sibe CHA mnc: c'y /tʂʰ/" class="sibe">ᡱ</td>
+<td tag="Mongolian Letter Sibe RAA mnc: ž /ɻ~ʐ/" class="sibe mnc">ᡰ</td>
+<td tag="Mongolian Letter Sibe CHA mnc: c'y /tʂʰ/" class="sibe mnc">ᡱ</td>
 <td tag="Mongolian Letter Sibe ZHA //" class="sibe">ᡲ</td>
-<td tag="Mongolian Letter Manchu I i /i/" class="manchu">ᡳ</td>
-<td tag="Mongolian Letter Manchu KA k /qʰ~kʰ/" class="manchu">ᡴ</td>
-<td tag="Mongolian Letter Manchu RA r /r/" class="manchu">ᡵ</td>
-<td tag="Mongolian Letter Manchu FA f /f/" class="manchu">ᡶ</td>
-<td tag="Mongolian Letter Manchu ZHA j'y /tʂ/" class="manchu">ᡷ</td>
+<td tag="Mongolian Letter Manchu I i /i/" class="manchu mnc">ᡳ</td>
+<td tag="Mongolian Letter Manchu KA k /qʰ~kʰ/" class="manchu mnc">ᡴ</td>
+<td tag="Mongolian Letter Manchu RA r /r/" class="manchu mnc">ᡵ</td>
+<td tag="Mongolian Letter Manchu FA f /f/" class="manchu mnc">ᡶ</td>
+<td tag="Mongolian Letter Manchu ZHA j'y /tʂ/" class="manchu mnc">ᡷ</td>
 <td tag="Mongolian Letter Cha with Two Dots" class="buryat">ᡸ</td>
 <td>᡹</td>
 <td>᡺</td>
@@ -556,7 +559,7 @@ MARKER">᠇</td>
 <p style="border: 1px solid">U+1820 ~ U+1842: basic letters</p>
 <p class="todo" style="border: 1px solid">U+1843 ~ U+185C: Todo letters</p>
 <p class="sibe" style="border: 1px solid">U+185D ~ U+1872: Sibe letters</p>
-<p class="manchu" style="border: 1px solid">U+1873 ~ U+1877: Manchu letters</p>
+<p class="manchu mnc" style="border: 1px solid">U+1873 ~ U+1877: Manchu letters</p>
 <p class="buryat" style="border: 1px solid">U+1878: Buryat letter (<a href="https://www.unicode.org/L2/L2017/17007-n4781-mongolian.pdf" target="_blank">details</a>)</p>
 <p style="border: 1px solid">U+1880 ~ U+18AA: Ali Gali extensions</p>
 </div>
