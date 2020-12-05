@@ -126,7 +126,7 @@ background: rgba(100,250,100,0.4);
 <body>
 <div align=center valign=middle>
 <h1>Mongolian script unicode summary</h1>
-<p>Click the character to type into textbox below, click its unicode below for detailed stats.<br>Any text you click inside the table are copied to your clipboard.<br>
+<p>Click the character to type into the textbox below, click its unicode below for detailed stats.<br>Any text you click inside the table are copied to your clipboard.<br>
     Default font is Mongolian Universal White. <span class="ex">U+181A ~ U+181E use Monospace font as MUW is not supported.</span><br>
     more info: <a href="https://www.unicode.org/charts/PDF/U1800.pdf" target="_blank">https://www.unicode.org/charts/PDF/U1800.pdf</a><br>
     by Victor Lee
@@ -546,7 +546,10 @@ MARKER">᠇</td>
 <div class="side">
 <textarea id="output" rows="4" placeholder="ᠭᠠᠷᠤᠯᠲᠠ ᡧᠣᡧᠣᡥᠣᠨ"></textarea>
 <p>
-<button onclick="insertAtCaret('output', ' ');return false;" style="color:blue">space<br>​</button> <button onclick="insertAtCaret('output', '\u202f');return false;" style="color:green">NNBSP<br>U+202F</button> <button onclick="document.getElementById('output').value = ''" style="color:red">clear<br>​</button></p>
+<button onclick="insertAtCaret('output', ' ');return false;" style="color:blue">space<br>​</button>
+<button onclick="insertAtCaret('output', '\u202f');return false;" style="color:green">NNBSP<br>U+202F</button>
+<button onclick="document.getElementById('output').value = ''" style="color:red">clear<br>​</button>
+</p>
 <p>
 <button onclick="monospace()">Monospace</button> textarea default<br>
 <button onclick="muw()">Mongolian Universal White</button> mn. & mnc.<br>
