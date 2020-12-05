@@ -11,9 +11,6 @@
 h1, h2, h3, p {
     font-family: arial;
 }
-.side > p {
-padding: 1px 5px;
-}
 @media (min-width: 1300px) {
 .table {
   width: 75%;
@@ -31,7 +28,6 @@ overflow-x:auto;
 }
 .side {
   max-width: 30rem;
-  padding: 2rem;
   margin: auto;
 }
 }
@@ -111,7 +107,7 @@ background: rgba(200,0,200,0.1);
 background: rgba(200,200,0,0.3);
 }
 .mnc {
-color: #750;
+color: #860;
 }
 .buryat {
 background: rgba(100,250,100,0.4);
@@ -120,12 +116,28 @@ background: rgba(100,250,100,0.4);
     font-size: 40px;
     width: 100%;
 }
+.side > hr {margin-top: 20px;}
+.side > p {
+padding: 1px 5px;
+margin-bottom: -10px;
+}
+.sidetabdiv {
+    max-height: 240px;
+    overflow-y:auto;
+    border: 1px solid;
+}
+.sidetab th {
+    font-family: Monospace;
+}
+.sidetab td {
+    font-family: Monospace, Mongolian Universal White;
+}
 </style>
 </head>
 <body>
 <div align=center valign=middle>
 <h1>Mongolian script unicode summary</h1>
-<p>Click the character to type into the textbox below, click its unicode below for detailed stats.<br>Any text you click inside the table are copied to your clipboard.<br>
+<p>Click the character to type into textbox below, click its unicode below for detailed stats.<br>Any text you click inside the table are copied to your clipboard.<br>
     Default font is Mongolian Universal White. <span class="ex">U+181A ~ U+181E use Monospace font as MUW is not supported.</span><br>
     more info: <a href="https://www.unicode.org/charts/PDF/U1800.pdf" target="_blank">https://www.unicode.org/charts/PDF/U1800.pdf</a><br>
     by Victor Lee
@@ -225,7 +237,7 @@ MARKER">᠇</td>
 <td>U+181F</td>
 </tr>
 <tr class="mongolian">
-<td alt="Mongolian Letter A а /a/ mnc: a /a/" class="mnc">ᠠ</td>
+<td alt="Mongolian Letter A а /a/ sjo, mnc: a /a/" class="mnc">ᠠ</td>
 <td alt="Mongolian Letter E э /e/">ᠡ</td>
 <td alt="Mongolian Letter I и /i/">ᠢ</td>
 <td alt="Mongolian Letter O о /ɔ/ mnc: o /ɔ/" class="mnc">ᠣ</td>
@@ -414,13 +426,13 @@ MARKER">᠇</td>
 <td alt="Mongolian Letter Manchu FA f /f/" class="manchu mnc">ᡶ</td>
 <td alt="Mongolian Letter Manchu ZHA j'y /tʂ/" class="manchu mnc">ᡷ</td>
 <td alt="Mongolian Letter Cha with Two Dots" class="buryat">ᡸ</td>
-<td>᡹</td>
-<td>᡺</td>
-<td>᡻</td>
-<td>᡼</td>
-<td>᡽</td>
-<td>᡾</td>
-<td>᡿</td>
+<td alt="null">᡹</td>
+<td alt="null">᡺</td>
+<td alt="null">᡻</td>
+<td alt="null">᡼</td>
+<td alt="null">᡽</td>
+<td alt="null">᡾</td>
+<td alt="null">᡿</td>
 </tr>
 <tr class="unicode">
 <td>U+1870</td>
@@ -543,24 +555,18 @@ MARKER">᠇</td>
 <br>
 </div>
 <div class="side">
-<textarea id="output" rows="4" placeholder="ᠭᠠᠷᠤᠯᠲᠠ ᡧᠣᡧᠣᡥᠣᠨ"></textarea>
+<textarea id="output" rows="3" placeholder="ᠭᠠᠷᠤᠯᠲᠠ ᡧᠣᡧᠣᡥᠣᠨ"></textarea>
 <p>
-<button onclick="insertAtCaret('output', ' ');return false;" style="color:blue">space<br>​</button>
-<button onclick="insertAtCaret('output', '\u202f');return false;" style="color:green">NNBSP<br>U+202F</button>
-<button onclick="document.getElementById('output').value = ''" style="color:red">clear<br>​</button>
-</p>
+<button onclick="insertAtCaret('output', ' ');return false;" style="color:blue">space<br>​</button> <button onclick="insertAtCaret('output', '\u202f');return false;" style="color:green">NNBSP<br>U+202F</button> <button onclick="document.getElementById('output').value = ''" style="color:red">clear<br>​</button></p>
 <p>
-fonts:<br>
 <button onclick="monospace()">Monospace</button> textarea default<br>
-<button onclick="muw()">Mongolian Universal White</button> mn. & sjo+mnc.<br>
+<button onclick="muw()">Mongolian Universal White</button> mn. & mnc.<br>
 <button onclick="nsm()">Noto Sans Mongolian</button> mn.<br>
 <button onclick="oss()">Onon Sonin Sans</button> mn.<br>
 <button onclick="mgt()">Menk Garqag Tig</button> mn.<br>
-<button onclick="zb()">XM_ZhengBai</button> sjo+mnc.<br>
-<button onclick="bh()">XM_BiaoHei</button> sjo+mnc.<br>
-<button onclick="yb()">XM_YingBi</button> sjo+mnc.<br>
-<button onclick="ms()">Menksoft2012</button> mn.<br>
-<button onclick="ogt()">Oyun Garbiqimel Tig</button> mn.</p>
+<button onclick="zb()">XM_ZhengBai</button> mnc.<br>
+<button onclick="bh()">XM_BiaoHei</button> mnc.<br>
+<button onclick="ms()">Menksoft2012</button> mn.</p>
 <hr>
 <p style="border: 1px solid">U+1800 ~ U+180A: punctuation</p>
 <p class="fc" style="border: 1px solid">U+180B ~ U+180F: format controls</p>
@@ -571,6 +577,1438 @@ fonts:<br>
 <p class="manchu mnc" style="border: 1px solid">U+1873 ~ U+1877: Manchu letters</p>
 <p class="buryat" style="border: 1px solid"><a href="https://www.unicode.org/L2/L2017/17007-n4781-mongolian.pdf" target="_blank">U+1878: Buryat letter</a></p>
 <p style="border: 1px solid">U+1880 ~ U+18AA: Ali Gali extensions</p>
+<hr>
+<div class="sidetabdiv">
+<table class="sidetab">
+<thead>
+  <tr>
+    <th>Code</th>
+    <th>Chr.</th>
+    <th>Character Name</th>
+    <th>MN</th>
+    <th>Td.</th>
+    <th>SJO</th>
+    <th>MNC</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>1800</td>
+    <td>᠀</td>
+    <td>BIRGA</td>
+    <td>✔</td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>1801</td>
+    <td>᠁</td>
+    <td>ELLIPSIS</td>
+    <td>✔</td>
+    <td>✔</td>
+    <td>✔</td>
+    <td>✔</td>
+  </tr>
+  <tr>
+    <td>1802</td>
+    <td>᠂</td>
+    <td>COMMA</td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>1803</td>
+    <td>᠃</td>
+    <td>FULL STOP</td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>1804</td>
+    <td>᠄</td>
+    <td>COLON</td>
+    <td>✔</td>
+    <td>✔</td>
+    <td>✔</td>
+    <td>✔</td>
+  </tr>
+  <tr>
+    <td>1805</td>
+    <td>᠅</td>
+    <td>FOUR DOTS</td>
+    <td>✔</td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>1806</td>
+    <td>᠆</td>
+    <td>TODO SOFT HYPHEN</td>
+    <td></td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>1807</td>
+    <td>᠇</td>
+    <td>SIBE SYLLABLE BOUNDARY MARKER</td>
+    <td></td>
+    <td></td>
+    <td>✔</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>1808</td>
+    <td>᠈</td>
+    <td>MANCHU COMMA</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>✔</td>
+  </tr>
+  <tr>
+    <td>1809</td>
+    <td>᠉</td>
+    <td>MANCHU FULL STOP</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>✔</td>
+  </tr>
+  <tr>
+    <td>180A</td>
+    <td>᠊</td>
+    <td>NIRUGU</td>
+    <td>✔</td>
+    <td>✔</td>
+    <td>✔</td>
+    <td>✔</td>
+  </tr>
+  <tr class="fc">
+    <td>180B</td>
+    <td>᠋</td>
+    <td>FREE VARIATION SELECTOR ONE</td>
+    <td>✔</td>
+    <td>✔</td>
+    <td>✔</td>
+    <td>✔</td>
+  </tr>
+  <tr class="fc">
+    <td>180C</td>
+    <td>᠌</td>
+    <td>FREE VARIATION SELECTOR TWO</td>
+    <td>✔</td>
+    <td>✔</td>
+    <td>✔</td>
+    <td>✔</td>
+  </tr>
+  <tr class="fc">
+    <td>180D</td>
+    <td>᠍</td>
+    <td>FREE VARIATION SELECTOR THREE</td>
+    <td>✔</td>
+    <td>✔</td>
+    <td>✔</td>
+    <td>✔</td>
+  </tr>
+  <tr class="fc">
+    <td>180E</td>
+    <td>᠎</td>
+    <td>VOWEL SEPARATOR</td>
+    <td>✔</td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>1810</td>
+    <td>᠐</td>
+    <td>DIGIT ZERO</td>
+    <td>✔</td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>1811</td>
+    <td>᠑</td>
+    <td>DIGIT ONE</td>
+    <td>✔</td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>1812</td>
+    <td>᠒</td>
+    <td>DIGIT TWO</td>
+    <td>✔</td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>1813</td>
+    <td>᠓</td>
+    <td>DIGIT THREE</td>
+    <td>✔</td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>1814</td>
+    <td>᠔</td>
+    <td>DIGIT FOUR</td>
+    <td>✔</td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>1815</td>
+    <td>᠕</td>
+    <td>DIGIT FIVE</td>
+    <td>✔</td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>1816</td>
+    <td>᠖</td>
+    <td>DIGIT SIX</td>
+    <td>✔</td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>1817</td>
+    <td>᠗</td>
+    <td>DIGIT SEVEN</td>
+    <td>✔</td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>1818</td>
+    <td>᠘</td>
+    <td>DIGIT EIGHT</td>
+    <td>✔</td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>1819</td>
+    <td>᠙</td>
+    <td>DIGIT NINE</td>
+    <td>✔</td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>1820</td>
+    <td>ᠠ</td>
+    <td>LETTER A</td>
+    <td>✔</td>
+    <td>✔</td>
+    <td>✔</td>
+    <td>✔</td>
+  </tr>
+  <tr>
+    <td>1821</td>
+    <td>ᠡ</td>
+    <td>LETTER E</td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>1822</td>
+    <td>ᠢ</td>
+    <td>LETTER I</td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>1823</td>
+    <td>ᠣ</td>
+    <td>LETTER O</td>
+    <td>✔</td>
+    <td></td>
+    <td>✔</td>
+    <td>✔</td>
+  </tr>
+  <tr>
+    <td>1824</td>
+    <td>ᠤ</td>
+    <td>LETTER U</td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>1825</td>
+    <td>ᠥ</td>
+    <td>LETTER OE</td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>1826</td>
+    <td>ᠦ</td>
+    <td>LETTER UE</td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>1827</td>
+    <td>ᠧ</td>
+    <td>LETTER EE</td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>1828</td>
+    <td>ᠨ</td>
+    <td>LETTER NA</td>
+    <td>✔</td>
+    <td>✔</td>
+    <td>✔</td>
+    <td>✔</td>
+  </tr>
+  <tr>
+    <td>1829</td>
+    <td>ᠩ</td>
+    <td>LETTER ANG</td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+    <td>✔</td>
+  </tr>
+  <tr>
+    <td>182A</td>
+    <td>ᠪ</td>
+    <td>LETTER BA</td>
+    <td>✔</td>
+    <td></td>
+    <td>✔</td>
+    <td>✔</td>
+  </tr>
+  <tr>
+    <td>182B</td>
+    <td>ᠫ</td>
+    <td>LETTER PA</td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>182C</td>
+    <td>ᠬ</td>
+    <td>LETTER QA</td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>182D</td>
+    <td>ᠭ</td>
+    <td>LETTER GA</td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>182E</td>
+    <td>ᠮ</td>
+    <td>LETTER MA</td>
+    <td>✔</td>
+    <td></td>
+    <td>✔</td>
+    <td>✔</td>
+  </tr>
+  <tr>
+    <td>182F</td>
+    <td>ᠯ</td>
+    <td>LETTER LA</td>
+    <td>✔</td>
+    <td>✔</td>
+    <td>✔</td>
+    <td>✔</td>
+  </tr>
+  <tr>
+    <td>1830</td>
+    <td>ᠰ</td>
+    <td>LETTER SA</td>
+    <td>✔</td>
+    <td>✔</td>
+    <td>✔</td>
+    <td>✔</td>
+  </tr>
+  <tr>
+    <td>1831</td>
+    <td>ᠱ</td>
+    <td>LETTER SHA</td>
+    <td>✔</td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>1832</td>
+    <td>ᠲ</td>
+    <td>LETTER TA</td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>1833</td>
+    <td>ᠳ</td>
+    <td>LETTER DA</td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>1834</td>
+    <td>ᠴ</td>
+    <td>LETTER CHA</td>
+    <td>✔</td>
+    <td>✔</td>
+    <td>✔</td>
+    <td>✔</td>
+  </tr>
+  <tr>
+    <td>1835</td>
+    <td>ᠵ</td>
+    <td>LETTER JA</td>
+    <td>✔</td>
+    <td></td>
+    <td>✔</td>
+    <td>✔</td>
+  </tr>
+  <tr>
+    <td>1836</td>
+    <td>ᠶ</td>
+    <td>LETTER YA</td>
+    <td>✔</td>
+    <td></td>
+    <td>✔</td>
+    <td>✔</td>
+  </tr>
+  <tr>
+    <td>1837</td>
+    <td>ᠷ</td>
+    <td>LETTER RA</td>
+    <td>✔</td>
+    <td>✔</td>
+    <td>✔</td>
+    <td>✔</td>
+  </tr>
+  <tr>
+    <td>1838</td>
+    <td>ᠸ</td>
+    <td>LETTER WA</td>
+    <td>✔</td>
+    <td>✔</td>
+    <td>✔</td>
+    <td>✔</td>
+  </tr>
+  <tr>
+    <td>1839</td>
+    <td>ᠹ</td>
+    <td>LETTER FA</td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>183A</td>
+    <td>ᠺ</td>
+    <td>LETTER KA</td>
+    <td>✔</td>
+    <td>✔</td>
+    <td>✔</td>
+    <td>✔</td>
+  </tr>
+  <tr>
+    <td>183B</td>
+    <td>ᠻ</td>
+    <td>LETTER KHA</td>
+    <td>✔</td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>183C</td>
+    <td>ᠼ</td>
+    <td>LETTER TSA</td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>183D</td>
+    <td>ᠽ</td>
+    <td>LETTER ZA</td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>183E</td>
+    <td>ᠾ</td>
+    <td>LETTER HAA</td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>183F</td>
+    <td>ᠿ</td>
+    <td>LETTER ZRA</td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>1840</td>
+    <td>ᡀ</td>
+    <td>LETTER LHA</td>
+    <td>✔</td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>1841</td>
+    <td>ᡁ</td>
+    <td>LETTER ZHI</td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>1842</td>
+    <td>ᡂ</td>
+    <td>LETTER CHI</td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr class="todo">
+    <td>1843</td>
+    <td>ᡃ</td>
+    <td>LETTER TODO LONG VOWEL SIGN</td>
+    <td></td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr class="todo">
+    <td>1844</td>
+    <td>ᡄ</td>
+    <td>LETTER TODO E</td>
+    <td></td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr class="todo">
+    <td>1845</td>
+    <td>ᡅ</td>
+    <td>LETTER TODO I</td>
+    <td></td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr class="todo">
+    <td>1846</td>
+    <td>ᡆ</td>
+    <td>LETTER TODO O</td>
+    <td></td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr class="todo">
+    <td>1847</td>
+    <td>ᡇ</td>
+    <td>LETTER TODO U</td>
+    <td></td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr class="todo">
+    <td>1848</td>
+    <td>ᡈ</td>
+    <td>LETTER TODO OE</td>
+    <td></td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr class="todo">
+    <td>1849</td>
+    <td>ᡉ</td>
+    <td>LETTER TODO UE</td>
+    <td></td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr class="todo">
+    <td>184A</td>
+    <td>ᡊ</td>
+    <td>LETTER TODO ANG</td>
+    <td></td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr class="todo">
+    <td>184B</td>
+    <td>ᡋ</td>
+    <td>LETTER TODO BA</td>
+    <td></td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr class="todo">
+    <td>184C</td>
+    <td>ᡌ</td>
+    <td>LETTER TODO PA</td>
+    <td></td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr class="todo">
+    <td>184D</td>
+    <td>ᡍ</td>
+    <td>LETTER TODO QA</td>
+    <td></td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr class="todo">
+    <td>184E</td>
+    <td>ᡎ</td>
+    <td>LETTER TODO GA</td>
+    <td></td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr class="todo">
+    <td>184F</td>
+    <td>ᡏ</td>
+    <td>LETTER TODO MA</td>
+    <td></td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr class="todo">
+    <td>1850</td>
+    <td>ᡐ</td>
+    <td>LETTER TODO TA</td>
+    <td></td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr class="todo">
+    <td>1851</td>
+    <td>ᡑ</td>
+    <td>LETTER TODO DA</td>
+    <td></td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr class="todo">
+    <td>1852</td>
+    <td>ᡒ</td>
+    <td>LETTER TODO CHA</td>
+    <td></td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr class="todo">
+    <td>1853</td>
+    <td>ᡓ</td>
+    <td>LETTER TODO JA</td>
+    <td></td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr class="todo">
+    <td>1854</td>
+    <td>ᡔ</td>
+    <td>LETTER TODO TSA</td>
+    <td></td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr class="todo">
+    <td>1855</td>
+    <td>ᡕ</td>
+    <td>LETTER TODO YA</td>
+    <td></td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr class="todo">
+    <td>1856</td>
+    <td>ᡖ</td>
+    <td>LETTER TODO WA</td>
+    <td></td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr class="todo">
+    <td>1857</td>
+    <td>ᡗ</td>
+    <td>LETTER TODO KA</td>
+    <td></td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr class="todo">
+    <td>1858</td>
+    <td>ᡘ</td>
+    <td>LETTER TODO GAA</td>
+    <td></td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr class="todo">
+    <td>1859</td>
+    <td>ᡙ</td>
+    <td>LETTER TODO HAA</td>
+    <td></td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr class="todo">
+    <td>185A</td>
+    <td>ᡚ</td>
+    <td>LETTER TODO JIA</td>
+    <td></td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr class="todo">
+    <td>185B</td>
+    <td>ᡛ</td>
+    <td>LETTER TODO NIA</td>
+    <td></td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr class="todo">
+    <td>185C</td>
+    <td>ᡜ</td>
+    <td>LETTER TODO DZA</td>
+    <td></td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr class="sibe">
+    <td>185D</td>
+    <td>ᡝ</td>
+    <td>LETTER SIBE E</td>
+    <td></td>
+    <td></td>
+    <td>✔</td>
+    <td>✔</td>
+  </tr>
+  <tr class="sibe">
+    <td>185E</td>
+    <td>ᡞ</td>
+    <td>LETTER SIBE I</td>
+    <td></td>
+    <td></td>
+    <td>✔</td>
+    <td></td>
+  </tr>
+  <tr class="sibe">
+    <td>185F</td>
+    <td>ᡟ</td>
+    <td>LETTER SIBE IY</td>
+    <td></td>
+    <td></td>
+    <td>✔</td>
+    <td>✔</td>
+  </tr>
+  <tr class="sibe">
+    <td>1860</td>
+    <td>ᡠ</td>
+    <td>LETTER SIBE UE</td>
+    <td></td>
+    <td></td>
+    <td>✔</td>
+    <td>✔</td>
+  </tr>
+<tr class="sibe">
+    <td>1861</td>
+    <td>ᡡ</td>
+    <td>LETTER SIBE U</td>
+    <td></td>
+    <td></td>
+    <td>✔</td>
+    <td>✔</td>
+  </tr>
+  <tr class="sibe">
+    <td>1862</td>
+    <td>ᡢ</td>
+    <td>LETTER SIBE ANG</td>
+    <td></td>
+    <td></td>
+    <td>✔</td>
+    <td></td>
+  </tr>
+  <tr class="sibe">
+    <td>1863</td>
+    <td>ᡣ</td>
+    <td>LETTER SIBE KA</td>
+    <td></td>
+    <td></td>
+    <td>✔</td>
+    <td></td>
+  </tr>
+  <tr class="sibe">
+    <td>1864</td>
+    <td>ᡤ</td>
+    <td>LETTER SIBE GA</td>
+    <td></td>
+    <td></td>
+    <td>✔</td>
+    <td>✔</td>
+  </tr>
+  <tr class="sibe">
+    <td>1865</td>
+    <td>ᡥ</td>
+    <td>LETTER SIBE HA</td>
+    <td></td>
+    <td></td>
+    <td>✔</td>
+    <td>✔</td>
+  </tr>
+  <tr class="sibe">
+    <td>1866</td>
+    <td>ᡦ</td>
+    <td>LETTER SIBE PA</td>
+    <td></td>
+    <td></td>
+    <td>✔</td>
+    <td>✔</td>
+  </tr>
+  <tr class="sibe">
+    <td>1867</td>
+    <td>ᡧ</td>
+    <td>LETTER SIBE SHA</td>
+    <td></td>
+    <td></td>
+    <td>✔</td>
+    <td>✔</td>
+  </tr>
+  <tr class="sibe">
+    <td>1868</td>
+    <td>ᡨ</td>
+    <td>LETTER SIBE TA</td>
+    <td></td>
+    <td></td>
+    <td>✔</td>
+    <td>✔</td>
+  </tr>
+  <tr class="sibe">
+    <td>1869</td>
+    <td>ᡩ</td>
+    <td>LETTER SIBE DA</td>
+    <td></td>
+    <td></td>
+    <td>✔</td>
+    <td>✔</td>
+  </tr>
+  <tr class="sibe">
+    <td>186A</td>
+    <td>ᡪ</td>
+    <td>LETTER SIBE JA</td>
+    <td></td>
+    <td></td>
+    <td>✔</td>
+    <td></td>
+  </tr>
+  <tr class="sibe">
+    <td>186B</td>
+    <td>ᡫ</td>
+    <td>LETTER SIBE FA</td>
+    <td></td>
+    <td></td>
+    <td>✔</td>
+    <td></td>
+  </tr>
+  <tr class="sibe">
+    <td>186C</td>
+    <td>ᡬ</td>
+    <td>LETTER SIBE GAA</td>
+    <td></td>
+    <td></td>
+    <td>✔</td>
+    <td>✔</td>
+  </tr>
+  <tr class="sibe">
+    <td>186D</td>
+    <td>ᡭ</td>
+    <td>LETTER SIBE HAA</td>
+    <td></td>
+    <td></td>
+    <td>✔</td>
+    <td>✔</td>
+  </tr>
+  <tr class="sibe">
+    <td>186E</td>
+    <td>ᡮ</td>
+    <td>LETTER SIBE TSA</td>
+    <td></td>
+    <td></td>
+    <td>✔</td>
+    <td>✔</td>
+  </tr>
+  <tr class="sibe">
+    <td>186F</td>
+    <td>ᡯ</td>
+    <td>LETTER SIBE ZA</td>
+    <td></td>
+    <td></td>
+    <td>✔</td>
+    <td>✔</td>
+  </tr>
+  <tr class="sibe">
+    <td>1870</td>
+    <td>ᡰ</td>
+    <td>LETTER SIBE RAA</td>
+    <td></td>
+    <td></td>
+    <td>✔</td>
+    <td>✔</td>
+  </tr>
+  <tr class="sibe">
+    <td>1871</td>
+    <td>ᡱ</td>
+    <td>LETTER SIBE CHA</td>
+    <td></td>
+    <td></td>
+    <td>✔</td>
+    <td>✔</td>
+  </tr>
+  <tr class="sibe">
+    <td>1872</td>
+    <td>ᡲ</td>
+    <td>LETTER SIBE ZHA</td>
+    <td></td>
+    <td></td>
+    <td>✔</td>
+    <td></td>
+  </tr>
+  <tr class="manchu">
+    <td>1873</td>
+    <td>ᡳ</td>
+    <td>LETTER MANCHU I</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>✔</td>
+  </tr>
+  <tr class="manchu">
+    <td>1874</td>
+    <td>ᡴ</td>
+    <td>LETTER MANCHU KA</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>✔</td>
+  </tr>
+  <tr class="manchu">
+    <td>1875</td>
+    <td>ᡵ</td>
+    <td>LETTER MANCHU RA</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>✔</td>
+  </tr>
+  <tr class="manchu">
+    <td>1876</td>
+    <td>ᡶ</td>
+    <td>LETTER MANCHU FA</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>✔</td>
+  </tr>
+  <tr class="manchu">
+    <td>1877</td>
+    <td>ᡷ</td>
+    <td>LETTER MANCHU ZHA</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>✔</td>
+  </tr>
+  <tr class="buryat">
+    <td>1878*</td>
+    <td>ᡸ</td>
+    <td><a href="https://www.unicode.org/L2/L2017/17007-n4781-mongolian.pdf">LETTER CHA WITH TWO DOTS</a></td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>1880</td>
+    <td>ᢀ</td>
+    <td>LETTER ALI GALI ANUSVARA ONE</td>
+    <td>✔</td>
+    <td>✔</td>
+    <td></td>
+    <td>✔</td>
+  </tr>
+  <tr>
+    <td>1881</td>
+    <td>ᢁ</td>
+    <td>LETTER ALI GALI VISARGA ONE</td>
+    <td>✔</td>
+    <td>✔</td>
+    <td></td>
+    <td>✔</td>
+  </tr>
+  <tr>
+    <td>1882</td>
+    <td>ᢂ</td>
+    <td>LETTER ALI GALI DAMARU</td>
+    <td>✔</td>
+    <td>✔</td>
+    <td></td>
+    <td>✔</td>
+  </tr>
+  <tr>
+    <td>1883</td>
+    <td>ᢃ</td>
+    <td>LETTER ALI GALI UBADAMA</td>
+    <td>✔</td>
+    <td>✔</td>
+    <td></td>
+    <td>✔</td>
+  </tr>
+  <tr>
+    <td>1884</td>
+    <td>ᢄ</td>
+    <td>LETTER ALI GALI INVERTED UBADAMA</td>
+    <td>✔</td>
+    <td>✔</td>
+    <td></td>
+    <td>✔</td>
+  </tr>
+  <tr>
+    <td>1885</td>
+    <td>ᢅ</td>
+    <td>LETTER ALI GALI BALUDA</td>
+    <td>✔</td>
+    <td>✔</td>
+    <td></td>
+    <td>✔</td>
+  </tr>
+  <tr>
+    <td>1886</td>
+    <td>ᢆ</td>
+    <td>LETTER ALI GALI THREE BALUDA</td>
+    <td>✔</td>
+    <td>✔</td>
+    <td></td>
+    <td>✔</td>
+  </tr>
+  <tr>
+    <td>1887</td>
+    <td>ᢇ</td>
+    <td>LETTER ALI GALI A</td>
+    <td>✔</td>
+    <td>✔</td>
+    <td></td>
+    <td>✔</td>
+  </tr>
+  <tr>
+    <td>1888</td>
+    <td>ᢈ</td>
+    <td>LETTER ALI GALI I</td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+    <td>✔</td>
+  </tr>
+  <tr>
+    <td>1889</td>
+    <td>ᢉ</td>
+    <td>LETTER ALI GALI KA</td>
+    <td>✔</td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>188A</td>
+    <td>ᢊ</td>
+    <td>LETTER ALI GALI NGA</td>
+    <td>✔</td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>188B</td>
+    <td>ᢋ</td>
+    <td>LETTER ALI GALI CA</td>
+    <td>✔</td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>188C</td>
+    <td>ᢌ</td>
+    <td>LETTER ALI GALI TTA</td>
+    <td>✔</td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>188D</td>
+    <td>ᢍ</td>
+    <td>LETTER ALI GALI TTHA</td>
+    <td>✔</td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>188E</td>
+    <td>ᢎ</td>
+    <td>LETTER ALI GALI DDA</td>
+    <td>✔</td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>188F</td>
+    <td>ᢏ</td>
+    <td>LETTER ALI GALI NNA</td>
+    <td>✔</td>
+    <td>✔</td>
+    <td></td>
+    <td>✔</td>
+  </tr>
+  <tr>
+    <td>1890</td>
+    <td>ᢐ</td>
+    <td>LETTER ALI GALI TA</td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>1891</td>
+    <td>ᢑ</td>
+    <td>LETTER ALI GALI DA</td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>1892</td>
+    <td>ᢒ</td>
+    <td>LETTER ALI GALI PA</td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>1893</td>
+    <td>ᢓ</td>
+    <td>LETTER ALI GALI PHA</td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>1894</td>
+    <td>ᢔ</td>
+    <td>LETTER ALI GALI SSA</td>
+    <td>✔</td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>1895</td>
+    <td>ᢕ</td>
+    <td>LETTER ALI GALI ZHA</td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>1896</td>
+    <td>ᢖ</td>
+    <td>LETTER ALI GALI ZA</td>
+    <td>✔</td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>1897</td>
+    <td>ᢗ</td>
+    <td>LETTER ALI GALI AH</td>
+    <td>✔</td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>1898</td>
+    <td>ᢘ</td>
+    <td>LETTER TODO ALI GALI TA</td>
+    <td></td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>1899</td>
+    <td>ᢙ</td>
+    <td>LETTER TODO ALI GALI ZHA</td>
+    <td></td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>189A</td>
+    <td>ᢚ</td>
+    <td>LETTER MANCHU ALI GALI GHA</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>✔</td>
+  </tr>
+  <tr>
+    <td>189B</td>
+    <td>ᢛ</td>
+    <td>LETTER MANCHU ALI GALI NGA</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>✔</td>
+  </tr>
+  <tr>
+    <td>189C</td>
+    <td>ᢜ</td>
+    <td>LETTER MANCHU ALI GALI CA</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>✔</td>
+  </tr>
+  <tr>
+    <td>189D</td>
+    <td>ᢝ</td>
+    <td>LETTER MANCHU ALI GALI JHA</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>✔</td>
+  </tr>
+  <tr>
+    <td>189E</td>
+    <td>ᢞ</td>
+    <td>LETTER MANCHU ALI GALI TTA</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>✔</td>
+  </tr>
+  <tr>
+    <td>189F</td>
+    <td>ᢟ</td>
+    <td>LETTER MANCHU ALI GALI DDHA</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>✔</td>
+  </tr>
+  <tr>
+    <td>18A0</td>
+    <td>ᢠ</td>
+    <td>LETTER MANCHU ALI GALI TA</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>✔</td>
+  </tr>
+  <tr>
+    <td>18A1</td>
+    <td>ᢡ</td>
+    <td>LETTER MANCHU ALI GALI DHA</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>✔</td>
+  </tr>
+  <tr>
+    <td>18A2</td>
+    <td>ᢢ</td>
+    <td>LETTER MANCHU ALI GALI SSA</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>✔</td>
+  </tr>
+  <tr>
+    <td>18A3</td>
+    <td>ᢣ</td>
+    <td>LETTER MANCHU ALI GALI CYA</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>✔</td>
+  </tr>
+  <tr>
+    <td>18A4</td>
+    <td>ᢤ</td>
+    <td>LETTER MANCHU ALI GALI ZHA</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>✔</td>
+  </tr>
+  <tr>
+    <td>18A5</td>
+    <td>ᢥ</td>
+    <td>LETTER MANCHU ALI GALI ZA</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>✔</td>
+  </tr>
+  <tr>
+    <td>18A6</td>
+    <td>ᢦ</td>
+    <td>LETTER ALI GALI HALF U</td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>18A7</td>
+    <td>ᢧ</td>
+    <td>LETTER ALI GALI HALF YA</td>
+    <td></td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>18A8</td>
+    <td>ᢨ</td>
+    <td>LETTER MANCHU ALI GALI BHA</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>✔</td>
+  </tr>
+  <tr>
+    <td>18A9</td>
+    <td>ᢩ</td>
+    <td>LETTER ALI GALI DAGALGA</td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>18AA*</td>
+    <td>ᢪ</td>
+    <td>LETTER MANCHU ALI GALI LHA</td>
+    <td>✔</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</tbody>
+</table>
+</div>
+<br>
 </div>
 </div>
 </body>
@@ -640,14 +2078,8 @@ function zb() {
 function bh() {
   document.getElementById("output").style.fontFamily = 'XM_BH';
 }
-function yb() {
-  document.getElementById("output").style.fontFamily = 'XM_YB';
-}
 function ms() {
   document.getElementById("output").style.fontFamily = 'Menksoft2012';
-}
-function ogt() {
-  document.getElementById("output").style.fontFamily = 'Oyun Garbiqimel Tig';
 }
 </script>
 </body>
