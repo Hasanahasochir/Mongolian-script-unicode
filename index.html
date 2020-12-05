@@ -82,11 +82,11 @@ table td, table th {
 .mongolian > td {
     transform: rotate(90deg);
 }
-table .mongolian > td:hover {
+.mongolian > td:hover {
     color: #F00;
     background: rgba(180,180,180,0.3);
 }
-table .unicode > td:hover {
+.unicode > td:hover {
     color: #00F;
     background: rgba(0,200,200,0.3);
 }
@@ -128,6 +128,10 @@ margin-bottom: -10px;
 }
 .sidetab th {
     font-family: Monospace;
+    position: sticky;
+    top: 0;
+    background: #EEE;
+    border: -10px solid;
 }
 .sidetab td {
     font-family: Monospace, Mongolian Universal White;
@@ -137,7 +141,7 @@ margin-bottom: -10px;
 <body>
 <div align=center valign=middle>
 <h1>Mongolian script unicode summary</h1>
-<p>Click the character to type into the textbox, click its unicode below for detailed stats.<br>Any text you click inside the table are automatically copied to your clipboard.<br>
+<p>Click a character to type into the textbox, click its unicode below for detailed stats.<br>Any text you click inside the table are automatically copied to your clipboard.<br>
     Default font is <a href="http://victorlee.github.io/Mongolian_Universal_White/" target="_blank">Mongolian Universal White</a>. <span class="ex">U+181A ~ U+181E use Monospace font as MUW is not supported.</span><br>
     more info: <a href="http://www.unicode.org/charts/PDF/U1800.pdf" target="_blank">https://www.unicode.org/charts/PDF/U1800.pdf</a><br>
     by <a href="http://github.com/victorlee/" target="_blank">Victor Lee</a>
