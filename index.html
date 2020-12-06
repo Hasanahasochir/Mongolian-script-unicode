@@ -2069,18 +2069,6 @@ function insertAtCaret(areaId, text) {
   var back = (txtarea.value).substring(strPos, txtarea.value.length);
   txtarea.value = front + text + back;
   strPos = strPos + text.length;
-  if (br == "ie") {
-    txtarea.focus();
-    var ieRange = document.selection.createRange();
-    ieRange.moveStart('character', -txtarea.value.length);
-    ieRange.moveStart('character', strPos);
-    ieRange.moveEnd('character', 0);
-    ieRange.select();
-  } else if (br == "ff") {
-    txtarea.selectionStart = strPos;
-    txtarea.selectionEnd = strPos;
-    txtarea.focus();
-  }
   txtarea.scrollTop = scrollPos;
 }
 // ---------------------------
