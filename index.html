@@ -2040,7 +2040,6 @@ $(".unicode>td").click(function(){
     var sel = window.getSelection(); 
     sel.removeAllRanges(); 
     sel.addRange(range);
-    document.execCommand('copy');
     window.open("https://www.compart.com/en/unicode/" + sel, "_blank");
 });
 // --------------------------- 64404655
