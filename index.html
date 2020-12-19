@@ -7,7 +7,6 @@
 <title>Mongolian script unicode summary</title>
 <style>
 @import url(https://victorlee.github.io/fonts/stylesheet.css);
-@import url(https://victorlee.github.io/manchu-fonts/stylesheet.css);
 h1, h2, h3, p {
     font-family: arial;
 }
@@ -118,6 +117,10 @@ background: rgba(100,250,100,0.4);
 }
 #output {
     font-size: 40px;
+    width: 100%;
+}
+#input {
+    font-size: 15px;
     width: 100%;
 }
 .side > hr {margin-top: 20px;}
@@ -568,16 +571,18 @@ margin-bottom: -10px;
 <p>
 <button onclick="insertAtCaret('output', ' ');return false;" style="color:blue">space<br>​</button> <button onclick="insertAtCaret('output', '\u202f');return false;" style="color:green">NNBSP<br>U+202F</button> <button onclick="document.getElementById('output').value = ''" style="color:red">clear<br>​</button></p>
 <p>
-<button onclick="monospace()">Monospace</button> textarea default<br>
-<button onclick="muw()">Mongolian Universal White</button> mn. & mnc.<br>
-<button onclick="nsm()">Noto Sans Mongolian</button> mn.<br>
-<button onclick="oss()">Onon Sonin Sans</button> mn.<br>
-<button onclick="mgt()">Menk Garqag Tig</button> mn.<br>
-<button onclick="zb()">XM_ZhengBai</button> mnc.<br>
-<button onclick="bh()">XM_BiaoHei</button> mnc.<br>
-<button onclick="yb()">XM_YingBi</button> mnc.<br>
-<button onclick="mw()">Mongolian Writing</button> mn.<br>
-<button onclick="tdr()">Todo_rom</button> Todo</p>
+<textarea id="input" oninput="myFunction()" rows="6">
+@import url();
+#output{
+font-family: Mongolian Universal White;
+}
+</textarea>
+<script>
+function myFunction() {
+  document.getElementsByTagName("style")[0].innerHTML = document.getElementById('input').value;
+}
+</script>
+</p>
 <hr>
 <p style="border: 1px solid">U+1800 ~ U+180A: punctuation</p>
 <p class="fc" style="border: 1px solid">U+180B ~ U+180F: format controls</p>
@@ -2066,36 +2071,6 @@ function insertAtCaret(areaId, text) {
   strPos = strPos + text.length;
   txtarea.scrollTop = scrollPos;
 }
-// ---------------------------
-function monospace() {
-  document.getElementById("output").style.fontFamily = "monospace";
-}
-function muw() {
-  document.getElementById("output").style.fontFamily = "Mongolian Universal White";
-}
-function nsm() {
-  document.getElementById("output").style.fontFamily = "Noto Sans Mongolian";
-}
-function oss() {
-  document.getElementById("output").style.fontFamily = "Onon Sonin Sans";
-}
-function mgt() {
-  document.getElementById("output").style.fontFamily = "Menk Garqag Tig";
-}
-function zb() {
-  document.getElementById("output").style.fontFamily = 'XM_ZB';
-}
-function bh() {
-  document.getElementById("output").style.fontFamily = 'XM_BH';
-}
-function yb() {
-  document.getElementById("output").style.fontFamily = 'XM_YB';
-}
-function mw() {
-  document.getElementById("output").style.fontFamily = 'Mongolian Writing';
-}
-function tdr() {
-  document.getElementById("output").style.fontFamily = 'Todo_rom';
-}</script>
+</script>
 </body>
 </html>
